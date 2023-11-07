@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-learning</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+
+    <div id="app">
+        <p>
+            <input type="text" v-model="message">
+        </p>
+        <p>{{ message }}({{message.length}})</p> 
+
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: 'What is up'
+                }
+            },
+            mounted() {
+                setTimeout(() => {
+                    this.message = 'Hello World'
+                }, 3000)
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
