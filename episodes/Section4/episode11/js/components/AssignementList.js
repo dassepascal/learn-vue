@@ -11,7 +11,7 @@ export default {
            
         </h2>
 
-        <assignement-initialTags
+        <assignement-tag
          :initial-tags="assignements.map(a => a.tag)"
          :current-tag="currentTag"
          @change="currentTag = $event"
