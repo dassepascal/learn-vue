@@ -2,32 +2,32 @@ export default {
     template: `
     <div class=" flex gap-2">
     <button
-        @click="$emit('change',tag) "
+        @click="$emit('update:modelValue',tag) "
         v-for="tag in tags"
         class="border px-1 py-px rounded text-xs"
-        :class="{'bg-blue-600 text-white': currentTag === tag}"
+        :class="{'border-blue-600 text-blue-500': tag === modelValue}"
         >{{ tag }}
     </button>
 </div>
 `
     ,
 
-props: {
-    initialTags: Array,    
-    currentTag: String,
-},
+    props: {
+        initialTags: Array,
+        modelValue: String,
+    },
 
-data() {
-    return {
-        currentTag: 'all',
-    }
-},
+    // data() {
+    //     return {
+    //         currentTag: 'all',
+    //     }
+    // },
 
 
     computed: {
         tags() {
             return ['all', ...new Set(this.initialTags)];
-            }
+        }
 
     },
 

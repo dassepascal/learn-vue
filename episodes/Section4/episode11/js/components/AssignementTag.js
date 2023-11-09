@@ -5,7 +5,7 @@ export default {
         @click="$emit('change',tag) "
         v-for="tag in tags"
         class="border px-1 py-px rounded text-xs"
-        :class="{'bg-blue-600 text-white': currentTag === tag}"
+        :class="{'border-blue-600 text-blue-500': currentTag === tag}"
         >{{ tag }}
     </button>
 </div>
@@ -17,11 +17,11 @@ props: {
     currentTag: String,
 },
 
-data() {
-    return {
-        currentTag: 'all',
-    }
-},
+// data() {
+//     return {
+//         currentTag: 'all',
+//     }
+// },
 
 
     computed: {
