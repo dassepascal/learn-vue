@@ -26,13 +26,7 @@ export default {
         }
     },
     computed: {
-        // inProgress() {
-        //     return this.assignements.filter(assignement => !assignement.complete)
-        // },
-        // complete() {
-        //     return this.assignements.filter(assignement => assignement.complete);
-        // },
-        filters() {
+               filters() {
             return {
                 inProgress: this.assignements.filter(assignement => !assignement.complete),
                 complete: this.assignements.filter(assignement => assignement.complete),
@@ -41,6 +35,7 @@ export default {
         }
 
     },
+    
 
     methods: {
         add(name) {

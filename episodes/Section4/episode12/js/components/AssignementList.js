@@ -12,7 +12,7 @@ export default {
         </h2>
 
         <assignement-tag
-        v-model="currentTag"
+        v-model:currentTag ="currentTag"
          :initial-tags="assignements.map(a => a.tag)"
          
        

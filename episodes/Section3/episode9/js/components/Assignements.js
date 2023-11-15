@@ -1,20 +1,13 @@
 import AssignementList from "./AssignementList.js";
+import AssignementCreate from "./AssignementCreate.js";
 
 export default {
-    components: { AssignementList },
+    components: { AssignementList, AssignementCreate },
     template: `
     <section class="space-y-6">
-    <assignement-list :assignements="filters.inProgress" title="In Progress"></assignement-list>
-<assignement-list :assignements="filters.complete" title="Completed"></assignement-list>
-
-
-<form @submit.prevent="add">
-<div class="border border-gray-600 text-black">
-<input v-model="newAssignement" placeholder="New assignement... " class="p-2"/>
-<button type="submit" class="bg-white p-2 border-l ">Add</button>
-</div>
- 
-</form>
+        <assignement-list :assignements="filters.inProgress" title="In Progress"></assignement-list>
+        <assignement-list :assignements="filters.complete" title="Completed"></assignement-list>
+        <assignement-create @add="add"></assignement-create>
     </section>
     
 
